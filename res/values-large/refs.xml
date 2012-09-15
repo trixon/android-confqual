@@ -1,0 +1,5 @@
+<resources>
+
+    <item name="activity_qualifier_list" type="layout">@layout/activity_qualifier_twopane</item>
+
+</resources>
