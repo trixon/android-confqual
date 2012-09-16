@@ -10,6 +10,7 @@ public class Item {
 
 	static {
 		sItems = new LinkedList<Item>();
+		sItems.add(new Item(R.string.key_introduction, R.string.value_introduction, R.raw.introduction));
 		sItems.add(new Item(R.string.key_mcc_mnc, R.string.value_na, R.raw.mcc_mnc));
 		sItems.add(new Item(R.string.key_locale, R.string.value_na, R.raw.locale));
 		sItems.add(new Item(R.string.key_smallest_width, R.string.value_smallestWidth, R.raw.smallest_width));

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body>
+	<p>Almost every application should provide alternative resources to
+		support specific device configurations. For instance, you should
+		include alternative drawable resources for different screen densities
+		and alternative string resources for different languages. At runtime,
+		Android detects the current device configuration and loads the
+		appropriate resources for your application.</p>
+
+	<p>To specify configuration-specific alternatives for a set of
+		resources:</p>
+	<ol>
+		<li>Create a new directory in <code>res/</code> named in the form
+			<code>
+				<em>&lt;resources_name&gt;</em>-<em>&lt;config_qualifier&gt;</em>
+			</code>.
+			<ul>
+				<li><em><code>&lt;resources_name&gt;</code></em> is the
+					directory name of the corresponding default resources (defined in
+					table 1).</li>
+				<li><em><code>&lt;qualifier&gt;</code></em> is a name that
+					specifies an individual configuration for which these resources are
+					to be used (defined in table 2).</li>
+			</ul>
+			<p>
+				You can append more than one <em><code>&lt;qualifier&gt;</code></em>.
+				Separate each one with a dash.
+			</p>
+			<p class="caution">
+				<strong>Caution:</strong> When appending multiple qualifiers, you
+				must place them in the same order in which they are listed. If the
+				qualifiers are ordered wrong, the resources are ignored.
+			</p>
+		</li>
+		<li>Save the respective alternative resources in this new
+			directory. The resource files must be named exactly the same as the
+			default resource files.</li>
+	</ol>
+
+	<p>For example, here are some default and alternative resources:</p>
+
+	<pre class="classic no-pretty-print">
+res/</br>
+&nbsp;drawable/</br>   <span style="color: black">
+&nbsp;&nbsp;icon.png</br>
+&nbsp;&nbsp;background.png</br>    </span>
+&nbsp;drawable-hdpi/</br>  <span style="color: black">
+&nbsp;&nbsp;icon.png</br>
+&nbsp;&nbsp;background.png</br>  </span>
+</pre>
+
+	<p>
+		The
+		<code>hdpi</code>
+		qualifier indicates that the resources in that directory are for
+		devices with a high-density screen. The images in each of these
+		drawable directories are sized for a specific screen density, but the
+		filenames are exactly the same. This way, the resource ID that you use
+		to reference the
+		<code>icon.png</code>
+		or
+		<code>background.png</code>
+		image is always the same, but Android selects the version of each
+		resource that best matches the current device, by comparing the device
+		configuration information with the qualifiers in the resource
+		directory name.
+	</p>
+
+	<p>Android supports several configuration qualifiers and you can
+		add multiple qualifiers to one directory name, by separating each
+		qualifier with a dash. Table 2 lists the valid configuration
+		qualifiers, in order of precedence&mdash;if you use multiple
+		qualifiers for a resource directory, you must add them to the
+		directory name in the order they are listed in the table.</p>
+</body>
+</html>
