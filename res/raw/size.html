@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body>
+          <li><strong>ldpi</strong>: Low-density screens; approximately 120dpi.</li>
+          <li><strong>mdpi</strong>: Medium-density (on traditional HVGA) screens; approximately
+160dpi.</li>
+          <li><strong>hdpi</strong>: High-density screens; approximately 240dpi.</li>
+          <li><strong>xhdpi</strong>: Extra high-density screens; approximately 320dpi. <em>Added in API
+Level 8</em></li>
+          <li><strong>nodpi</strong>: This can be used for bitmap resources that you do not want to be scaled
+to match the device density.</li>
+          <li><strong>tvdpi</strong>: Screens somewhere between mdpi and hdpi; approximately 213dpi. This is
+not considered a "primary" density group. It is mostly intended for televisions and most
+apps shouldn't need it&mdash;providing mdpi and hdpi resources is sufficient for most apps and
+the system will scale them as appropriate. This qualifier was introduced with API level 13.</li>
+        </ul>
+        <p>There is a 3:4:6:8 scaling ratio between the four primary densities (ignoring the
+tvdpi density). So, a 9x9 bitmap in ldpi is 12x12 in mdpi, 18x18 in hdpi and 24x24 in xhdpi.</p>
+        <p>If you decide that your image resources don't look good enough on a television or
+other certain devices and want to try tvdpi resources, the scaling factor is 1.33*mdpi. For
+example, a 100px x 100px image for mdpi screens should be 133px x 133px for tvdpi.</p>
+        <p class="note"><strong>Note:</strong> Using a density qualifier does not imply that the
+resources are <em>only</em> for screens of that density. If you do not provide alternative
+resources with qualifiers that better match the current device configuration, the system may use
+whichever resources are the <a href="#BestMatch">best match</a>.</p>
+        <p>See <a href="/guide/practices/screens_support.html">Supporting Multiple
+Screens</a> for more information about how to handle different screen densities and how Android
+might scale your bitmaps to fit the current density.</p></body>
+</html>

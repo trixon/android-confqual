@@ -118,7 +118,6 @@ public class QualifierListFragment extends SherlockListFragment {
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ItemViewHolder itemViewHolder;
 			View v = convertView;
-
 			if (v == null) {
 				LayoutInflater li = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 				v = li.inflate(R.layout.list_item, null);

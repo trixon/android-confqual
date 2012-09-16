@@ -17,9 +17,9 @@
     <string name="key_navkey">Navigation key availability</string>
     <string name="key_nontouchnav">Primary non-touch navigation method</string>
     <string name="key_api">Platform Version (API level)</string>
-    <!-- <string name="key_dockmode">-</string> -->
-    <!-- <string name="key_navkey">-</string> -->
-    <!-- <string name="key_nightmode">-</string> -->
+    <string name="value_dockmode">-</string>
+    <string name="value_navkey">-</string>
+    <string name="value_nightmode">-</string>
     <string name="value_na">-</string>
     <string name="value_smallestWidth">API&lt;13</string>
     <string name="value_availableWidth">API&lt;13</string>
