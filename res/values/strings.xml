@@ -1,7 +1,5 @@
 <resources>
 
-    <string name="title_qualifier_detail">Qualifier Detail</string>
-    <string name="title_qualifier_list">Qualifiers</string>
     <string name="about">About</string>
     <string name="help">Help</string>
     <string name="configuration">Configuration</string>

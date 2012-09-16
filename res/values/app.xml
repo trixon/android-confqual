@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ConfQual</string>
-    <string name="app_title">Configuration Qualifiers</string>
+    <string name="app_name">confQual</string>
     <string name="app_version">0.0.1</string>
     <string name="app_copyright">© 2012 Patrik Karlsson</string>
     <string name="app_email">patrik@trixon.se</string>

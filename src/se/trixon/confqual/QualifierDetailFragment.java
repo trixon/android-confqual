@@ -35,6 +35,7 @@ public class QualifierDetailFragment extends SherlockFragment {
 
 			String text = convertStreamToString(getResources().openRawResource(mItem.getDescriptionId())).replaceAll("\\s+", " ");
 			WebView webView = (WebView) rootView.findViewById(R.id.webView);
+			webView.setVerticalScrollBarEnabled(false);
 			webView.getSettings().setBuiltInZoomControls(true);
 			webView.loadData(text, "text/html", null);
 		}
