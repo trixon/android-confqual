@@ -36,7 +36,7 @@ public class QualifierDetailActivity extends SherlockFragmentActivity {
 
 		if (savedInstanceState == null) {
 			Bundle arguments = new Bundle();
-			arguments.putString(QualifierDetailFragment.ARG_ITEM_ID, getIntent().getStringExtra(QualifierDetailFragment.ARG_ITEM_ID));
+			arguments.putInt(QualifierDetailFragment.ARG_ITEM_ID, getIntent().getIntExtra(QualifierDetailFragment.ARG_ITEM_ID, 0));
 			QualifierDetailFragment fragment = new QualifierDetailFragment();
 			fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction().add(R.id.qualifier_detail_container, fragment).commit();
