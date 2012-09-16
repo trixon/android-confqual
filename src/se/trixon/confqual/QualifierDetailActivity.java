@@ -2,14 +2,14 @@ package se.trixon.confqual;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
-import android.view.MenuItem;
 
-public class QualifierDetailActivity extends FragmentActivity {
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+
+public class QualifierDetailActivity extends SherlockFragmentActivity {
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {
 		if (item.getItemId() == android.R.id.home) {
 			NavUtils.navigateUpTo(this, new Intent(this, QualifierListActivity.class));
 			return true;
@@ -23,7 +23,7 @@ public class QualifierDetailActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_qualifier_detail);
 
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		if (savedInstanceState == null) {
 			Bundle arguments = new Bundle();

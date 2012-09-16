@@ -1,6 +1,5 @@
 <resources>
 
-    <string name="app_name">confqual</string>
     <string name="title_qualifier_detail">Qualifier Detail</string>
     <string name="title_qualifier_list">Qualifiers</string>
 

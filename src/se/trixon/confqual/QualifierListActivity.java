@@ -2,9 +2,10 @@ package se.trixon.confqual;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 
-public class QualifierListActivity extends FragmentActivity implements QualifierListFragment.Callbacks {
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+
+public class QualifierListActivity extends SherlockFragmentActivity implements QualifierListFragment.Callbacks {
 
 	private boolean mTwoPane;
 

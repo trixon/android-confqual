@@ -3,12 +3,13 @@ package se.trixon.confqual;
 import se.trixon.confqual.dummy.DummyContent;
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class QualifierListFragment extends ListFragment {
+import com.actionbarsherlock.app.SherlockListFragment;
+
+public class QualifierListFragment extends SherlockListFragment {
 
 	private static Callbacks sDummyCallbacks = new Callbacks() {
 		@Override
