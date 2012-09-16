@@ -5,14 +5,23 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
 
 public class QualifierDetailActivity extends SherlockFragmentActivity {
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getSupportMenuInflater().inflate(R.menu.activity_conf_qual, menu);
+
+		return super.onCreateOptionsMenu(menu);
+	}
 
 	@Override
 	public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {
 		if (item.getItemId() == android.R.id.home) {
 			NavUtils.navigateUpTo(this, new Intent(this, QualifierListActivity.class));
-			return true;
+		} else if (item.getItemId() == R.id.menu_about) {
+			((ConfQualApplication) getApplication()).getAboutDialog(this).show();
 		}
 
 		return super.onOptionsItemSelected(item);

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 
 public class QualifierListActivity extends SherlockFragmentActivity implements QualifierListFragment.Callbacks {
 
@@ -21,6 +23,13 @@ public class QualifierListActivity extends SherlockFragmentActivity implements Q
 	}
 
 	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getSupportMenuInflater().inflate(R.menu.activity_conf_qual, menu);
+
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
 	public void onItemSelected(String id) {
 		if (mTwoPane) {
 			Bundle arguments = new Bundle();
@@ -34,5 +43,14 @@ public class QualifierListActivity extends SherlockFragmentActivity implements Q
 			detailIntent.putExtra(QualifierDetailFragment.ARG_ITEM_ID, id);
 			startActivity(detailIntent);
 		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == R.id.menu_about) {
+			((ConfQualApplication) getApplication()).getAboutDialog(this).show();
+		}
+
+		return super.onOptionsItemSelected(item);
 	}
 }
