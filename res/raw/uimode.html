@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body>
+	<ul class="nolist">
+		<li><code>car</code>: Device is displaying in a car dock</li>
+		<li><code>desk</code>: Device is displaying in a desk dock</li>
+		<li><code>television</code>: Device is displaying on a
+			television, providing a "ten foot" experience where its UI is on a
+			large screen that the user is far away from, primarily oriented
+			around DPAD or other non-pointer interaction</li>
+		<li><code>appliance</code>: Device is serving as an appliance,
+			with no display</li>
+	</ul>
+	<p>
+		<em>Added in API level 8, television added in API 13.</em>
+	</p>
+	<p>
+		For information about how your app can respond when the device is
+		inserted into or removed from a dock, read <a
+			href="/training/monitoring-device-state/docking-monitoring.html">Determining
+			and Monitoring the Docking State and Type</a>.
+	</p>
+	<p>
+		This can change during the life of your application if the user places
+		the device in a dock. You can enable or disable some of these modes
+		using
+		<code>
+			<a href="/reference/android/app/UiModeManager.html">UiModeManager</a>
+		</code>
+		. See <a href="runtime-changes.html">Handling Runtime Changes</a> for
+		information about how this affects your application during runtime.
+	</p>
+</body>
+</html>

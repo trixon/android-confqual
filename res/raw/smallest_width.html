@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body>
+	<p>
+		The fundamental size of a screen, as indicated by the shortest
+		dimension of the available screen area. Specifically, the device's
+		smallestWidth is the shortest of the screen's available height and
+		width (you may also think of it as the "smallest possible width" for
+		the screen). You can use this qualifier to ensure that, regardless of
+		the screen's current orientation, your application's has at least
+		<code>&lt;N&gt;</code>
+		dps of width available for it UI.
+	</p>
+	<p>
+		For example, if your layout requires that its smallest dimension of
+		screen area be at least 600 dp at all times, then you can use this
+		qualifer to create the layout resources,
+		<code>res/layout-sw600dp/</code>
+		. The system will use these resources only when the smallest dimension
+		of available screen is at least 600dp, regardless of whether the 600dp
+		side is the user-perceived height or width. The smallestWidth is a
+		fixed screen size characteristic of the device; <strong>the
+			device's smallestWidth does not change when the screen's orientation
+			changes</strong>.
+	</p>
+	<p>
+		The smallestWidth of a device takes into account screen decorations
+		and system UI. For example, if the device has some persistent UI
+		elements on the screen that account for space along the axis of the
+		smallestWidth, the system declares the smallestWidth to be smaller
+		than the actual screen size, because those are screen pixels not
+		available for your UI. Thus, the value you use should be the actual
+		smallest dimension <em>required by your layout</em> (usually, this
+		value is the "smallest width" that your layout supports, regardless of
+		the screen's current orientation).
+	</p>
+	<p>Some values you might use here for common screen sizes:</p>
+	<ul>
+		<li>320, for devices with screen configurations such as:
+			<ul>
+				<li>240x320 ldpi (QVGA handset)</li>
+				<li>320x480 mdpi (handset)</li>
+				<li>480x800 hdpi (high density handset)</li>
+			</ul>
+		</li>
+		<li>480, for screens such as 480x800 mdpi (tablet/handset).</li>
+		<li>600, for screens such as 600x1024 mdpi (7" tablet).</li>
+		<li>720, for screens such as 720x1280 mdpi (10" tablet).</li>
+	</ul>
+	<p>When your application provides multiple resource directories
+		with different values for the smallestWidth qualifier, the system uses
+		the one closest to (without exceeding) the device's smallestWidth.</p>
+	<p>
+		<em>Added in API level 13.</em>
+	</p>
+	<p>
+		Also see the <a
+			href="/guide/topics/manifest/supports-screens-element.html#requiresSmallest"><code>android:requiresSmallestWidthDp</code></a>
+		attribute, which declares the minimum smallestWidth with which your
+		application is compatible, and the
+		<code>
+			<a
+				href="/reference/android/content/res/Configuration.html#smallestScreenWidthDp">smallestScreenWidthDp</a>
+		</code>
+		configuration field, which holds the device's smallestWidth value.
+	</p>
+	<p>
+		For more information about designing for different screens and using
+		this qualifier, see the <a
+			href="/guide/practices/screens_support.html">Supporting Multiple
+			Screens</a> developer guide.
+	</p>
+</body>
+</html>

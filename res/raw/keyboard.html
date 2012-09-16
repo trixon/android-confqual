@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body>
+	<ul class="nolist">
+		<li><code>keysexposed</code>: Device has a keyboard available. If
+			the device has a software keyboard enabled (which is likely), this
+			may be used even when the hardware keyboard is <em>not</em> exposed
+			to the user, even if the device has no hardware keyboard. If no
+			software keyboard is provided or it's disabled, then this is only
+			used when a hardware keyboard is exposed.</li>
+		<li><code>keyshidden</code>: Device has a hardware keyboard
+			available but it is hidden <em>and</em> the device does <em>not</em>
+			have a software keyboard enabled.</li>
+		<li><code>keyssoft</code>: Device has a software keyboard
+			enabled, whether it's visible or not.</li>
+	</ul>
+	<p>
+		If you provide
+		<code>keysexposed</code>
+		resources, but not
+		<code>keyssoft</code>
+		resources, the system uses the
+		<code>keysexposed</code>
+		resources regardless of whether a keyboard is visible, as long as the
+		system has a software keyboard enabled.
+	</p>
+	<p>
+		This can change during the life of your application if the user opens
+		a hardware keyboard. See <a href="runtime-changes.html">Handling
+			Runtime Changes</a> for information about how this affects your
+		application during runtime.
+	</p>
+	<p>
+		Also see the configuration fields
+		<code>
+			<a
+				href="/reference/android/content/res/Configuration.html#hardKeyboardHidden">hardKeyboardHidden</a>
+		</code>
+		and
+		<code>
+			<a
+				href="/reference/android/content/res/Configuration.html#keyboardHidden">keyboardHidden</a>
+		</code>
+		, which indicate the visibility of a hardware keyboard and and the
+		visibility of any kind of keyboard (including software), respectively.
+	</p>
+</body>
+</html>

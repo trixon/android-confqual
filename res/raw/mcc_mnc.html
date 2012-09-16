@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body>
+	<p>
+		The mobile country code (MCC), optionally followed by mobile network
+		code (MNC) from the SIM card in the device. For example,
+		<code>mcc310</code>
+		is U.S. on any carrier,
+		<code>mcc310-mnc004</code>
+		is U.S. on Verizon, and
+		<code>mcc208-mnc00</code>
+		is France on Orange.
+	</p>
+	<p>If the device uses a radio connection (GSM phone), the MCC and
+		MNC values come from the SIM card.</p>
+	<p>
+		You can also use the MCC alone (for example, to include
+		country-specific legal resources in your application). If you need to
+		specify based on the language only, then use the <em>language and
+			region</em> qualifier instead (discussed next). If you decide to use the
+		MCC and MNC qualifier, you should do so with care and test that it
+		works as expected.
+	</p>
+	<p>
+		Also see the configuration fields
+		<code>
+			<a href="/reference/android/content/res/Configuration.html#mcc">mcc</a>
+		</code>
+		, and
+		<code>
+			<a href="/reference/android/content/res/Configuration.html#mnc">mnc</a>
+		</code>
+		, which indicate the current mobile country code and mobile network
+		code, respectively.
+	</p>
+</body>
+</html>
