@@ -1,0 +1,28 @@
+<resources>
+
+    <string name="key_mcc_mnc">Mobile country/network code</string>
+    <string name="key_locale">Language and region</string>
+    <string name="key_smallest_width">Smallest width</string>
+    <string name="key_available_width">Available width</string>
+    <string name="key_available_height">Available height</string>
+    <string name="key_size">Screen size</string>
+    <string name="key_aspect">Screen aspect</string>
+    <string name="key_orientation">Screen orientation</string>
+    <string name="key_uimode">UI mode</string>
+    <string name="key_nightmode">Night mode</string>
+    <string name="key_dpi">Screen pixel density (dpi)</string>
+    <string name="key_touchscreen">Touchscreen type</string>
+    <string name="key_keyboard">Keyboard availability</string>
+    <string name="key_textinput">Primary text input method</string>
+    <string name="key_navkey">Navigation key availability</string>
+    <string name="key_nontouchnav">Primary non-touch navigation method</string>
+    <string name="key_api">Platform Version (API level)</string>
+    <!-- <string name="key_dockmode">-</string> -->
+    <!-- <string name="key_navkey">-</string> -->
+    <!-- <string name="key_nightmode">-</string> -->
+    <string name="value_na">-</string>
+    <string name="value_smallestWidth">API&lt;13</string>
+    <string name="value_availableWidth">API&lt;13</string>
+    <string name="value_availableHeight">API&lt;13</string>
+
+</resources>

@@ -1,11 +1,14 @@
 package se.trixon.confqual;
 
-import se.trixon.confqual.dummy.DummyContent;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockListFragment;
 
@@ -13,14 +16,14 @@ public class QualifierListFragment extends SherlockListFragment {
 
 	private static Callbacks sDummyCallbacks = new Callbacks() {
 		@Override
-		public void onItemSelected(String id) {
+		public void onItemSelected(int position) {
 		}
 	};
 
 	private static final String STATE_ACTIVATED_POSITION = "activated_position";
 	private int mActivatedPosition = ListView.INVALID_POSITION;
-
 	private Callbacks mCallbacks = sDummyCallbacks;
+	private Context mContext;
 
 	public QualifierListFragment() {
 	}
@@ -38,7 +41,8 @@ public class QualifierListFragment extends SherlockListFragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(), android.R.layout.simple_list_item_activated_1, android.R.id.text1, DummyContent.ITEMS));
+		mContext = getActivity();
+		setListAdapter(new QulifierAdapter());
 	}
 
 	@Override
@@ -50,7 +54,7 @@ public class QualifierListFragment extends SherlockListFragment {
 	@Override
 	public void onListItemClick(ListView listView, View view, int position, long id) {
 		super.onListItemClick(listView, view, position, id);
-		mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+		mCallbacks.onItemSelected(position);
 	}
 
 	@Override
@@ -85,6 +89,52 @@ public class QualifierListFragment extends SherlockListFragment {
 
 	public interface Callbacks {
 
-		public void onItemSelected(String id);
+		public void onItemSelected(int position);
+	}
+
+	private class ItemViewHolder {
+		public TextView key;
+		public TextView value;
+	}
+
+	private class QulifierAdapter extends BaseAdapter {
+
+		@Override
+		public int getCount() {
+			return Item.sItems.size();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			return Item.sItems.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			ItemViewHolder itemViewHolder;
+			View v = convertView;
+
+			if (v == null) {
+				LayoutInflater li = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+				v = li.inflate(R.layout.list_item, null);
+				itemViewHolder = new ItemViewHolder();
+				itemViewHolder.key = (TextView) v.findViewById(R.id.key);
+				itemViewHolder.value = (TextView) v.findViewById(R.id.value);
+				v.setTag(itemViewHolder);
+			} else {
+				itemViewHolder = (ItemViewHolder) v.getTag();
+			}
+
+			itemViewHolder.key.setText(getString(Item.sItems.get(position).getKeyId()));
+			itemViewHolder.value.setText(getString(Item.sItems.get(position).getValueId()));
+
+			return v;
+		}
+
 	}
 }

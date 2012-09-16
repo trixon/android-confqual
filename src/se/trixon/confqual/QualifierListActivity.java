@@ -30,17 +30,17 @@ public class QualifierListActivity extends SherlockFragmentActivity implements Q
 	}
 
 	@Override
-	public void onItemSelected(String id) {
+	public void onItemSelected(int position) {
 		if (mTwoPane) {
 			Bundle arguments = new Bundle();
-			arguments.putString(QualifierDetailFragment.ARG_ITEM_ID, id);
+			arguments.putInt(QualifierDetailFragment.ARG_ITEM_ID, position);
 			QualifierDetailFragment fragment = new QualifierDetailFragment();
 			fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction().replace(R.id.qualifier_detail_container, fragment).commit();
 
 		} else {
 			Intent detailIntent = new Intent(this, QualifierDetailActivity.class);
-			detailIntent.putExtra(QualifierDetailFragment.ARG_ITEM_ID, id);
+			detailIntent.putExtra(QualifierDetailFragment.ARG_ITEM_ID, position);
 			startActivity(detailIntent);
 		}
 	}
