@@ -19,6 +19,9 @@ public class QualifierListActivity extends SherlockFragmentActivity implements Q
 		if (findViewById(R.id.qualifier_detail_container) != null) {
 			mTwoPane = true;
 			((QualifierListFragment) getSupportFragmentManager().findFragmentById(R.id.qualifier_list)).setActivateOnItemClick(true);
+			if (savedInstanceState == null) {
+				onItemSelected(0);
+			}
 		}
 	}
 

@@ -1,5 +1,6 @@
 package se.trixon.confqual;
 
+import se.trixon.confqual.ConfQualApplication.CfgKey;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -130,10 +131,22 @@ public class QualifierListFragment extends SherlockListFragment {
 			}
 
 			itemViewHolder.key.setText(getString(Item.sItems.get(position).getKeyId()));
-			itemViewHolder.value.setText(getString(Item.sItems.get(position).getValueId()));
+			ConfQualApplication cqApp = (ConfQualApplication) getActivity().getApplication();
+			if (position == 1) {
+				itemViewHolder.value.setText(cqApp.getConfigValue(CfgKey.MCC));
+			} else if (position == 2) {
+				itemViewHolder.value.setText(cqApp.getConfigValue(CfgKey.LO));
+			} else if (position == 3) {
+				itemViewHolder.value.setText(cqApp.getConfigValue(CfgKey.SW));
+			} else if (position == 4) {
+				itemViewHolder.value.setText(cqApp.getConfigValue(CfgKey.AW));
+			} else if (position == 5) {
+				itemViewHolder.value.setText(cqApp.getConfigValue(CfgKey.AH));
+			} else {
+				itemViewHolder.value.setText(getString(Item.sItems.get(position).getValueId()));
+			}
 
 			return v;
 		}
-
 	}
 }
