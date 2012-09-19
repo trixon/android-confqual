@@ -1,11 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="se.trixon.confqual"
-    android:versionCode="1"
+    android:versionCode="2"
     android:versionName="@string/app_version" >
 
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="15" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
 
     <application
         android:name=".ConfQualApplication"

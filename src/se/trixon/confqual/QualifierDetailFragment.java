@@ -54,9 +54,8 @@ public class QualifierDetailFragment extends SherlockFragment {
 			WebView webView = (WebView) rootView.findViewById(R.id.webView);
 			webView.setVerticalScrollBarEnabled(false);
 			webView.getSettings().setBuiltInZoomControls(true);
-			webView.loadData(text, "text/html", null);
+			webView.loadDataWithBaseURL("http://developer.android.com/guide/topics/resources/", text, "text/html", "utf-8", null);
 		}
-
 		return rootView;
 	}
 
